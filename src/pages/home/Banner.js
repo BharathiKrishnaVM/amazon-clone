@@ -18,27 +18,26 @@ function Banner() {
         <Carousel
           autoplay
           autoplayReverse
-          className="h-banner"
-          renderCenterLeftControls={({ previousSlide }) => (
+          renderCenterLeftControls={(previousSlide) => {
             <Icon
               className="h-banner__control"
               size={5}
               path={mdiChevronLeft}
               onClick={previousSlide}
-            />
-          )}
-          renderCenterRightControls={({ nextSlide }) => (
+            />;
+          }}
+          renderCenterRightControls={(nextSlide) => {
             <Icon
-              className="h-banner__control"
+              className="h-banner_control"
               size={5}
               path={mdiChevronRight}
               onClick={nextSlide}
-            />
-          )}
+            />;
+          }}
           renderBottomCenterControls={() => null}
         >
           {banners.map((bannerSrc, index) => (
-            <img key={index} alt={`Banner ${index + 1}`} src={bannerSrc} />
+            <img key={index} src={bannerSrc} alt={bannerSrc} />
           ))}
         </Carousel>
       </div>
